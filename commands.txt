@@ -1,0 +1,11 @@
+// Install project dependencies to ensure the server app is running correctly.
+npm install express @prisma/client dotenv
+npm install -D prisma
+
+// Command lines for Prisma
+npx prisma generate        // Generate latest data source for every changes in file 'schema.prisma'
+npx prisma migrate dev     // Creates a migration file for changes in file 'schema.prisma' to ensure consistency and correctness.
+npm prisma db push         // Pushes all migration file(s) into your target database.
+
+// Command lines for node (Within your project diectory)
+node app.js
