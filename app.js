@@ -27,14 +27,14 @@ app.get('/users', async (req, res) => {
 });
 
 // USING GET METHOD. Listens for endpoint "/user" then runs a function that retrieves user data atleast one or none.
-app.get('/user', async (req, res) => {
+app.post('/user-one', async (req, res) => {
     const { email, name } = req.body;
     const userOne = await prisma.user.findFirst({
         where: {
             email,
         },
     }); // Find a single using filter method like where.
-    res.json({ user });
+    res.json({ userOne });
 });
 
 // USING POST METHOD. Returns data containing string Hello World.
