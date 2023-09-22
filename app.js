@@ -16,7 +16,11 @@ app.post('/save', async (req, res) => {
             name,
         },
     });
-    res.json({ user });
+
+    res.json({ 
+        user,
+        message: 'User created successfully.'
+     });
 });
 
 // USING GET METHOD. Listens for endpoint "/user" then runs a function that retrieves user data atleast one or none.
@@ -38,7 +42,7 @@ app.post('/user-one', async (req, res) => {
 });
 
 // USING POST METHOD. Returns data containing string Hello World.
-app.post('/helloworld', async (req, res) => {
+app.get('/helloworld', async (req, res) => {
     res.json({ data: 'Hello World' });
 });
 
